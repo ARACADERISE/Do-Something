@@ -1,4 +1,5 @@
 #define INCLUDE_ALL
+#define WITH_CODE
 #include "keyword_lexer.h"
 #include "../quick_use.h"
 
@@ -12,5 +13,6 @@ KeywordLexer_* init_keyword_lexer() {
 }
 
 KeywordLexer_* get_next_keyword(KeywordLexer_* k_l) {
-    
+
+    return k_l;
 }

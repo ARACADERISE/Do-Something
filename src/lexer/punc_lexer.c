@@ -1,5 +1,6 @@
 /* Picking up Puncuation */
 #define INCLUDE_ALL // we might want <stdio.h> in this file for error checking
+#define WITH_CODE
 #include "../quick_use.h"
 #include "punc_lexer.h"
 

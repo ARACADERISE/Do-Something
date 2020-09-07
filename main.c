@@ -1,12 +1,12 @@
 #include <stdio.h>
+#define WITH_CODE
+#include "src/errors.h"
 #include "src/errors.h"
 #include "src/quick_use.h"
 
 /* Bite is a language that works with bytes! */
 void print_help() {
-    fprintf(stderr,"\nRun with ./main <filename>\n\n");
-    fflush(stderr);
-    exit(1);
+    RaiseErrorWithCode("\nFailed.\n\nRun with './main.o <filename>'\n\nFailed with error: %d\n\n", FailedToRun, FailedToRun);
 }
 
 int main(int args, char* args_[]) {
