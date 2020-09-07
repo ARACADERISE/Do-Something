@@ -1,6 +1,15 @@
 #ifndef QUICK_USE
 #define QUICK_USE
 
+#ifdef DEFINE_ALL
+
+#define DEFINE_BOOLS // defining booleans
+#define DEFINE_PRE_TYPES // all integer types
+#define INCLUDE_ALL // by default we will do this
+#define IMPORT_BOTH_MACROS // DEFINE_ALL is a easy way of defining all useful ideals, so include both Error handling ideals
+
+#endif
+
 /*
     File used to define preprocessor constants to use in the mini language "Do Something"
 */

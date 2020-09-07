@@ -1,18 +1,35 @@
-#define INCLUDE_ALL
-#define WITH_CODE
+#define DEFINE_ALL
 #include "../quick_use.h"
 #include "tokenizer.h"
 
-#define total 24 // doing to iterate through the list
-static char all_puncuation[total] = {
+#define total_punctuation 24 // doing to iterate through the list
+static char all_puncuation[total_punctuation] = {
     '(',')','[',']','{','}',
     '_','-','+','=',':',';',
     '"','\'','!','@','$','*','^','%',
     ',','.','<','>'
 };
 
+#define total_keywords 2
+static char* all_keywords[total_keywords] = {
+    "set","Int"
+};
+
 KeywordToken* set_keyword_token(int token_id, char* keyword_) {
     KeywordToken* k_t = calloc(1,sizeof(*k_t));
+
+    static int found_keyword = 1; // meaning false
+    static int i = 0;
+
+    do {
+
+        if(strcmp(
+            keyword_,all_keywords[i]
+        ) == 0) found_keyword = 0;
+
+        i++;
+        if(i == total_keywords - 1) RaiseErrorWithCode("\nUnknown keyword(%s)\n\n",UnkownKeywordError,keyword_);
+    } while(found_keyword == 1);
 
     k_t->keyword_token = token_id;
     k_t->keyword = keyword_;
@@ -27,11 +44,11 @@ PunctuationToken* set_punc_token(int punc_token_id, char punctuation) {
     static int i = 0;
 
     do {
-        i++;
 
         if(punctuation == all_puncuation[i]) ++times_found;
 
-        if(i == total - 1) RaiseErrorWithCode("\nUnknown punctuation(%c)\n\n", -1, punctuation);
+        i++;
+        if(i == total_punctuation - 1) RaiseErrorWithCode("\nUnknown punctuation(%c)\n\n", IncompatiblePunctuationError, punctuation);
     } while(times_found < 1);
 
     p_t->puncation_value = punctuation;

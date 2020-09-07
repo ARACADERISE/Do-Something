@@ -1,5 +1,4 @@
-#define INCLUDE_ALL
-#define WITH_CODE
+#define DEFINE_ALL
 #include "keyword_lexer.h"
 #include "../quick_use.h"
 
