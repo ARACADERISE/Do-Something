@@ -45,6 +45,7 @@ These will be easier to use when we need to return 0, 1 or a void pointer within
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <ctype.h>
 #include "errors.h"
 
 #else
@@ -53,6 +54,7 @@ These will be easier to use when we need to return 0, 1 or a void pointer within
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <ctype.h>
 #include "erros.h"
 
 #endif
@@ -68,6 +70,7 @@ These will be easier to use when we need to return 0, 1 or a void pointer within
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <ctype.h>
 #include "errors.h"
 #endif
 
