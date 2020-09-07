@@ -9,7 +9,9 @@
 
 /* If you don't define WITH_CODE, then this macro will be available for usage. */
 #ifndef WITH_CODE
+#ifndef IMPORT_BOTH_MACROS
 #define RaiseError(MSG, ...) fprintf(MSG, ##__VA_ARGS__), exit(EXIT_FAILURE)
+#endif
 #endif
 
 /* If you define IMPORT_BOTH_MACROS then you will have access to both: RaiseErrorWithCode and RaiseError macro functions */
