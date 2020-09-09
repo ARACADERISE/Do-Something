@@ -1,5 +1,6 @@
 #ifndef KeyWordLexer
 #define KeyWordLexer
+#include "lexer.h"
 
 typedef struct KeywordLexer {
     char* current_keyword;
@@ -7,6 +8,6 @@ typedef struct KeywordLexer {
 } KeywordLexer_;
 
 KeywordLexer_* init_keyword_lexer();
-KeywordLexer_* get_next_keyword(KeywordLexer_* k_l);
+KeywordLexer_* get_next_keyword(KeywordLexer_* k_l, struct Lexer* lexer_);
 
 #endif

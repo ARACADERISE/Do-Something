@@ -11,7 +11,20 @@ KeywordLexer_* init_keyword_lexer() {
     return k_l;
 }
 
-KeywordLexer_* get_next_keyword(KeywordLexer_* k_l) {
+KeywordLexer_* keyword_lexer_gather_keyword(Lexer_* lexer_) {
+    do {
+
+        if(
+            lexer_->current_char == ' ' ||
+            lexer_->current_char == '{' ||
+            lexer_->current_char == '}' ||
+            lexer_->current_char == ';' ||
+            lexer_->current_char == '\0'
+        ) break;
+    } while(1);
+}
+
+KeywordLexer_* get_next_keyword(KeywordLexer_* k_l, Lexer_* lexer_) {
 
     return k_l;
 }
